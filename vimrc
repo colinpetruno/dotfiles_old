@@ -33,6 +33,7 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'godlygeek/tabular'
 Plugin 'scrooloose/syntastic' "syntax highlighting
 Plugin 'maksimr/vim-jsbeautify'
+Plugin 'mustache/vim-mustache-handlebars'
 
 " Settings
 set background=dark   " you can use `dark` or `light` as your background
@@ -50,9 +51,17 @@ set shiftwidth=4
 map <C-n> :NERDTreeToggle<CR>
 map <C-f> :call JsBeautify()<cr>
 
+nmap <F1> :set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+imap <F1> <Esc>:set paste<CR>:r !pbpaste<CR>:set nopaste<CR>
+nmap <F2> :.w !pbcopy<CR><CR>
+vmap <F2> :w !pbcopy<CR><CR>
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+au BufNewFile,BufRead *.hbs set filetype=mustache
+
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
 "
