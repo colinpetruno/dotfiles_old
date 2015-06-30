@@ -20,6 +20,11 @@ alias gc="git commit"
 alias gf="git fetch"
 alias gr="git rebase"
 
+alias dm="docker-machine"
+alias b2d="boot2docker"
+
+alias vim="mvim -v"
+
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
     colorflag="--color"
@@ -32,3 +37,7 @@ alias l="ls -lF ${colorflag}"
 
 # List all files colorized in long format, including dot files
 alias la="ls -laF ${colorflag}"
+alias deploy_donation_prod="cap apps:booster_donation:production deploy"
+alias deploy_fulcrum_prod="cap apps:booster_fulcrum:production deploy"
+alias deploy_backend_prod='cap apps:booster_backend:production deploy'
+alias deploy_admin_prod='cap apps:booster_admin:production deploy'

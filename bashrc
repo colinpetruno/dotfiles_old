@@ -1,2 +1,7 @@
 export BASH_CONF="bashrc"
 [ -n "$PS1" ] && source ~/.bash_profile;
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
